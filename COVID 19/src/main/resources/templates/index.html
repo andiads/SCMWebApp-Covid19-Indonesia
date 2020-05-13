@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Supply Management Chain COVID 19</title>
+</head>
+<body>
+<div align="center">
+    <h1>Laboratorium</h1>
+    <a href="new">Create New Lab Information</a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Kode Lab</th>
+                <th>Nama Lab</th>
+                <th>Alamat Lab</th>
+                <th>Pengelola Lab</th>
+                <th>Email Lab</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="labs : ${listLabs}">
+            	<td th:text="${labs.code_lab}">Kode Lab</td>
+                <td th:text="${labs.nama_lab}">Nama Lab</td>
+                <td th:text="${labs.alamat_lab}">Alamat Lab</td>
+                <td th:text="${labs.pengelola_lab}">Pengelola Lab</td>
+                <td th:text="${labs.mail_lab}">Email Lab</td>
+                <td>
+                	<a th:href="@{'/edit/' + ${labs.id}}">Edit</a>
+                	&nbsp;&nbsp;&nbsp;
+                	<a th:href="@{'/delete/' + ${labs.id}}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>    
+</body>
+</html>
