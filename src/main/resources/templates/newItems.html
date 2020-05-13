@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>New Items</title>
+</head>
+<body>
+<div align="center">
+<h1>Create New Item</h1>
+<br />
+<form action="#" th:action="@{/save}" th:object="${items}" method="post">
+<table border="0" cellpadding="10">
+
+
+<tr>
+<td>Item code:</td>
+<td>
+<input type="text" th:field="*{item_code}"/>
+</td>
+</tr>
+
+<tr>
+<td>Item code:</td>
+<td>
+<input type="text" th:field="*{item_name}"/>
+</td>
+</tr>
+
+<tr>
+<td>Item Brand:</td>
+<td>
+<input type="text" th:field="*{item_brand}"/>
+</td>
+</tr>
+
+<tr>
+<td>Item Kemasan:</td>
+<td>
+<input type="text" th:field="*{item_kemasan}"/>
+</td>
+</tr>
+
+<tr>
+<td>Item Piece Kemasan:</td>
+<td>
+<input type="text" th:field="*{item_pieces_kemasan}"/>
+</td>
+</tr>
+
+<tr>
+<td>Id Category:</td>
+<td>
+<input type="text" th:field="*{id_category}"/>
+</td>
+</tr>
+
+<tr>
+<td>Created At:</td>
+<td>
+<input type="text" th:field="*{created_at}"/>
+</td>
+</tr>
+
+<tr>
+<td>Id Brand:</td>
+<td>
+<input type="text" th:field="*{id_brand}"/>
+</td>
+</tr>
+
+<tr>
+<td>Id Sub Catagory:</td>
+<td>
+<input type="text" th:field="*{id_sub Cat}"/>
+</td>
+</tr>
+
+<tr>
+<td>Id Distributor:</td>
+<td>
+<input type="text" th:field="*{id_distributor}"/>
+</td>
+</tr>
+
+<tr>
+<td>Id Metrics:</td>
+<td>
+<input type="text" th:field="*{id_metrics}"/>
+</td>
+</tr>
+
+<tr>
+<td colspan="2"><button type="submit">save</button></td>
+</tr>
+
+</table>
+</form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+      <head>
+<head>
+<meta charset="ISO-8859-1">
+<title>Items List</title>
+</head>
+<body>
+<div align="center">
+<h1>Items List</h1>
+<a href="/new"> Create New Items</a>
+<br/><br/>
+
+<table border="1" cellpadding="10">
+<thead>
+<tr>
+<th>Id</th>
+<th>Item Code</th>
+<th>Item Name</th>
+<th>Brand</th>
+<th>Kemasan</th>
+<th>Pieces Kemasan</th>
+<th>Metric Pieces</th>
+<th>Category</th>
+<th>Created at</th>
+<th>Updated at</th>
+<th>shown</th>
+<th>Created by</th>
+<th>Id Brand</th>
+<th>Id SUb catagoty</th>
+<th>Id Distributor</th>
+<th>Id Metrics</th>
+</tr>
+</thead>
+<tr th:each="items : ${listItems}">
+<td th:each="${items.id_item}">Id</td>
+<td th:each="${items.item_code}">Item Code</td>
+<td th:each="${items.item_name}">Item Name</td>
+<td th:each="${items.item_brand}">Brand</td>
+<td th:each="${items.item_kemasan}">Kemasan</td>
+<td th:each="${items.item_metrics_pieces}">Metric Pieces</td>
+<td th:each="${items.id_category}">Category</td>
+<td th:each="${items.created_at}">Created at</td>
+<td th:each="${items.update_at}">Updated at</td>
+<td th:each="${items.shown}">shown</td>
+<td th:each="${items.created_by}">Created by</td>
+<td th:each="${items.id_brand}">Id Brand</td>
+<td th:each="${items.id_sub_cat}">Id Sub catagory</td>
+<td th:each="${items.id_distirbutor}">Id Distributor</td>
+<td th:each="${items.id_metrics}">Id Metrics</td>
+<td>
+<a th:href="@{'editItems/'+$(items.id_item}}">Edit</a>
+&nbsp;&nbsp;&nbsp;
+<a th:href="@{'/deleteItems'+${items.id_item}}">Delete</a>
+</td>
+</table>
+</div>
+</body>
+</html>
